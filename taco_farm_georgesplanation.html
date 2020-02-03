@@ -1,0 +1,86 @@
+<!-- Challenge Exercise for 1/16/2020 Class: WA1911 
+Auther: Letisha Rahming
+Date: 1/16/2020
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	Challenge 1/16/2020</title>
+	<style>
+	
+		body {
+			background-color: #8FBC8F;
+		}
+		h1 {
+			color: red;
+			text-align:center;
+			text-shadow: 2px 2px 5px yellow;
+		}
+		
+		div#button {
+			width: 180px;
+			color: white;
+			background-color: red;
+			border-radius: 14px;
+			margin: 0px auto;
+			text-align: center;
+			cursor: pointer;
+		}
+			
+		img {
+			height: 120px;
+			width: 120px;
+			border: 1px solid green;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="main">Click below to add a taco!</h1>
+	<div id="button">TACO!</div>
+	<h2> you have this many tacos:<span id="tacoCount"></span></h2>
+	<div id="tacoFarm"></div>
+	
+	<!-- Your JavaScript goes here -->
+	<script>
+	/*Stage 1 problems
+	<div id="button"> needs to be clickable
+		-add an eent handler/listener
+	clicking the <div id="button"> should create an <img> element
+		-creating an img element node
+		-add the src attribute to the <img>
+		-append the fragment to the document
+	*/
+	
+	//initialize taco image here	
+	//create psuedo element tag(in this case this is called a node) for taco.png here
+	//img.setAttribute("src", "taco.png");
+	//img.setAttribute("alt", "alt");
+	//Indicate the container type (div) and the exact location (body>div) AND position (before/after)of where the taco image tag should be placed.	
+	//Indidicate the location AND position of subsequet taco image tags should be placed
+	//create the function that takes action to insert a new taco image tag to the document as stated above (needed to add.addEventListener)
+	
+	
+		document.getElementById("button").addEventListener("click", addTaco); 
+			
+			var countTaco = 0;
+			
+			function addTaco(){
+				var tacoCount = document.getElementById("tacoCount");
+				countTaco++;
+					if(countTaco<=10){
+						var taco  = document.createElement("img");
+						taco.setAttribute("src", "tacos.png");
+						var gps = document.getElementById("tacoFarm");
+						gps.appendChild(taco);
+						tacoCount.innerHTML= countTaco;
+						}
+					else{
+					document.getElementsByTagName("H2")[0].innerHTML="WOW! YOU MUST REALLY LUV TACOS! (^_^)";
+					document.getElementById("button").style.visibility = "hidden";
+					}								
+	}	
+	</script>
+</body>
+</html>
